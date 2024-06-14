@@ -1,0 +1,151 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sao-reg;
+  font-size: 24px;
+}
+
+@font-face {
+  font-family: sao-reg;
+  src: url("font/OTF/Crimson-Roman.otf");
+}
+
+@font-face {
+  font-family: sao-reg-wel;
+  src: url("font/OTF/Crimson-Roman.otf");
+}
+
+section.ribbon {
+  width: 10vw;
+  height: 100vh;
+  background-color: #F3A501ff;
+  font-family: sao-reg-wel;
+  padding: 1em;
+  text-align: center;
+  border: 1px solid #585756ff;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+section.ribbon>h1 {
+  font-size: 35px;
+}
+
+main {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+main>article {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+article.menu {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5em;
+  background-image: url("image/alexandria.png");
+  background-size: cover;
+}
+
+section.description {
+  font-size: 40px;
+}
+
+article.book-list {
+  display: flex;
+  align-items: center;
+  padding: 2em;
+  gap: 1em;
+  background-image: url("image/pexels-pixabay-326333.jpg");
+  background-size: cover;
+  justify-content: space-between;
+}
+
+article.book-list>section {
+  display: flex;
+  gap: 1em;
+}
+
+div.book {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  height: 25vh;
+}
+
+.have-read {
+  margin: 10px;
+  background-color: yellow;
+}
+
+button {
+  border: none;
+  padding: 0.2em;
+  font-size: 40px;
+}
+
+button:hover {
+  color: white;
+  background-color: #F3A501ff;
+}
+
+button:active {
+  background-color: #b87d00ff;
+}
+
+button>img {
+  width: 10px;
+  height: 10px;
+}
+
+form>button[onclick="closeWindow(this, event)"] {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+aside {
+  background-color: lightgoldenrodyellow;
+}
+
+aside#outer-aside {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#searchWindow,
+#addBookWindow {
+  padding: 1em;
+  width: 30vw;
+  height: 50vh;
+  background-color: white;
+  position: absolute;
+  top: 30vh;
+  left: 40vw;
+}
+
+@media only screen and (max-width: 768px) {
+
+  #searchWindow,
+  #addBookWindow {
+    top: 5vh;
+    left: 10vw;
+    width: 80vw;
+    height: 60vh;
+  }
+
+  .book {
+    font-size: 14px;
+  }
+
+  .book button {
+    font-size: 12px;
+  }
+}

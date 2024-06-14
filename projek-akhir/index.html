@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Books List</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="fetchBooks()">
+    <main>
+        <article class="menu">
+            <section class="ribbon">
+                <h1>
+                    A<br />L<br />E<br />X<br />A<br />N<br />D<br />R<br />I<br />A<br />
+                    <br />L<br />I<br />B<br />R<br />A<br />R<br />Y<br />
+                </h1>
+            </section>
+            <div class="menu-content">
+                <section class="description">
+                    Your number 1 archivist to manage all the book you read,
+                    have read, and will read.
+                </section>
+                <section class="buttons">
+                    <button onclick="popSearch()">Search Books</button>
+                    <button onclick="popAddBook()">Add Book</button>
+                </section>
+            </div>
+        </article>
+        <article class="book-list">
+            <section class="have-read">
+
+            </section>
+            <section class="havent-read">
+
+            </section>
+        </article>
+    </main>
+    <aside id="outer-aside">
+        <div id="searchWindow" style="display: none">
+            <form id="searchForm" onsubmit="searchBook(this, event)">
+                <button onclick="closeWindow(this, event)"><img src="image/icons8-close.svg"
+                        alt="close window" /></button>
+                <input type="text" id="searchQuery"/>
+                <button type="submit">
+                    <img src="image/icons8-search-100.png" alt="Search Book" />
+                </button>
+            </form>
+        </div>
+        <div id="addBookWindow" style="display: none">
+            <form id="addBookForm" onsubmit="addBook(this, event)">
+                <button onclick="closeWindow(this, event)"><img src="image/icons8-close.svg"
+                        alt="close window" /></button>
+                <label for="book-title">book-title</label><br />
+                <input type="text" id="book-title" /><br />
+                <label for="date-release">year-of-release</label><br />
+                <input type="number" min="600" max="2099" step="1" name="date-release" id="date-release" /><br />
+                <label for="authorInForm">Author</label><br />
+                <input type="text" id="authorInForm" />
+                <label for="have-read">have-read</label>
+                <input type="checkbox" name="have-read" id="have-read" />
+                <button type="submit">
+                    <img src="image/icons8-add-100.png" alt="Add Book" />
+                </button>
+            </form>
+        </div>
+    </aside>
+    <script src="script.js"></script>
+</body>
+
+</html>
